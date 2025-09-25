@@ -1,25 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1,wght@400..700,GRAD@-25..200,opsz@20..48');
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@0..1,wght@300..700,GRAD@-25..200,opsz@20..48');
 
 :root {
     /* Light mode (default) */
-    --bg: #F7F7F8;
+    --bg: #FAFBFC;
     --panel: #FFFFFF;
-    --panel-soft: #FAFAFB;
-    --text: #2D2D2D;
-    --text-muted: #6B7280;
-    --border: #E6E7EB;
-    --brand: #10A37F;
-    --brand-soft: rgba(16, 163, 127, 0.12);
-    --highlight: #E7F7F2;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    --panel-soft: #F8F9FA;
+    --text: #1A1D29;
+    --text-muted: #6C7293;
+    --border: #E5E7EB;
+    --brand: #6366F1;
+    --brand-soft: rgba(99, 102, 241, 0.08);
+    --highlight: rgba(99, 102, 241, 0.08);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --input-bg: #FFFFFF;
-    --input-text: #2D2D2D;
-    --input-border: #E3E5EA;
-    --focus: rgba(16, 163, 127, 0.35);
+    --input-text: #1A1D29;
+    --input-border: #E5E7EB;
+    --focus: rgba(99, 102, 241, 0.35);
     --toast-bg: #FFFFFF;
-    --hero-grad: linear-gradient(180deg, rgba(16, 163, 127, 0.10), transparent);
+    --hero-grad: linear-gradient(135deg, rgba(99, 102, 241, 0.08), transparent);
     --card-gap: 48px;
     /* More space between utilities */
     --section-gap: 48px;
@@ -27,57 +26,58 @@
 
 body.theme-dark {
     /* Dark mode theme color #212121 */
-    --bg: #212121;
-    --panel: #2A2A2A;
-    --panel-soft: #252525;
-    --text: #ECECF1;
-    --text-muted: #C5C5D2;
-    --border: #3A3A3A;
-    --brand: #10A37F;
-    --brand-soft: rgba(16, 163, 127, 0.18);
-    --highlight: rgba(16, 163, 127, 0.12);
-    --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-    --input-bg: #2B2B2B;
+    --bg: #0F0F23;
+    --panel: #16213E;
+    --panel-soft: #1E2749;
+    --text: #E2E8F0;
+    --text-muted: #94A3B8;
+    --border: #334155;
+    --brand: #818CF8;
+    --brand-soft: rgba(129, 140, 248, 0.12);
+    --highlight: rgba(129, 140, 248, 0.12);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --input-bg: #1E2749;
     /* Inputs change visibly in dark mode */
-    --input-text: #ECECF1;
-    --input-border: #3A3A3A;
-    --focus: rgba(16, 163, 127, 0.45);
-    --toast-bg: #2A2A2A;
-    --hero-grad: linear-gradient(180deg, rgba(16, 163, 127, 0.18), transparent);
+    --input-text: #E2E8F0;
+    --input-border: #334155;
+    --focus: rgba(129, 140, 248, 0.45);
+    --toast-bg: #16213E;
+    --hero-grad: linear-gradient(135deg, rgba(129, 140, 248, 0.12), transparent);
 }
 
-/* Base */
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 1240px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 28px
+    padding: 0 32px;
 }
 
 .muted {
-    color: var(--text-muted)
+    color: var(--text-secondary);
 }
 
 .mono {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Layout */
 .app {
     display: flex;
     min-height: 100vh
@@ -128,7 +128,6 @@ body {
     padding: 14px 28px;
 }
 
-/* Hero on Home */
 .hero {
     background: var(--panel);
     border-radius: 18px;
@@ -177,7 +176,6 @@ body {
     cursor: pointer;
 }
 
-/* Cards and visual surfaces */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -225,7 +223,6 @@ body {
     margin: 10px 0
 }
 
-/* Buttons */
 .btn {
     appearance: none;
     border: 0;
@@ -289,7 +286,6 @@ body {
     transform: translateY(1px)
 }
 
-/* Inputs */
 .input,
 .select,
 .textarea {
@@ -322,7 +318,6 @@ label {
     display: inline-block
 }
 
-/* Bubbles */
 .bubble-in,
 .bubble-out {
     border-radius: 18px;
@@ -339,7 +334,6 @@ label {
     color: var(--brand)
 }
 
-/* Titles */
 .title {
     font-weight: 600;
     font-size: 22px
@@ -350,7 +344,6 @@ label {
     font-size: 16px
 }
 
-/* Animations / motions */
 .fadeUp {
     animation: fadeUp .35s ease both
 }
@@ -387,7 +380,6 @@ label {
     text-shadow: 0 0 18px rgba(16, 163, 127, 0.45)
 }
 
-/* View routing */
 .view {
     display: none
 }
@@ -396,7 +388,6 @@ label {
     display: block;
 }
 
-/* Toast */
 .toast-wrap {
     position: fixed;
     right: 24px;
@@ -423,7 +414,6 @@ label {
     animation: fadeUp .25s ease both
 }
 
-/* Icon font setup */
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
     font-family: 'Material Symbols Outlined';
@@ -432,7 +422,6 @@ label {
     font-size: 24px;
 }
 
-/* Small helpers */
 .row {
     display: flex;
     align-items: center
@@ -498,7 +487,6 @@ label {
     justify-content: center
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px
