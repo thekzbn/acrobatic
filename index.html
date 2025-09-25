@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Acrobatic — Your AI-Powered Toolkit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Sidebar: minimal icons only -->
+        <aside class="sidebar">
+            <button class="icon-btn" data-route="home" title="Home">
+                <span class="material-symbols-outlined" style="color: var(--brand)">home</span>
+            </button>
+            <div class="divider" style="width: 52px"></div>
+            <button class="icon-btn" data-route="math" title="Math & Numbers">
+                <span class="material-symbols-outlined">functions</span>
+            </button>
+            <button class="icon-btn" data-route="science" title="Science & Knowledge">
+                <span class="material-symbols-outlined">science</span>
+            </button>
+            <button class="icon-btn" data-route="time" title="Time & Environment">
+                <span class="material-symbols-outlined">schedule</span>
+            </button>
+            <button class="icon-btn" data-route="everyday" title="Everyday Tools">
+                <span class="material-symbols-outlined">build</span>
+            </button>
+            <div class="spacer"></div>
+            <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+            <a href="https://www.thekzbn.name.ng/" target="_blank" rel="noopener noreferrer" class="icon-btn" title="My site"
+                style="text-decoration:none">
+                <span class="material-symbols-outlined">info</span>
+            </a>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-inner container">
+                    <div class="row gap-3">
+                        <div class="center"
+                            style="width: 38px; height: 38px; border-radius: 10px; background: var(--brand-soft); color: var(--brand); font-weight: 700">
+                            A</div>
+                        <div>
+                            <div style="font-weight: 600">Acrobatic</div>
+                            <div class="muted" style="font-size: 13px">Your AI‑powered toolkit</div>
+                        </div>
+                    </div>
+                    <div class="row gap-3">
+                        <span class="pill">
+                            <span class="material-symbols-outlined" style="font-size:16px">bolt</span>
+                            Cohesive. Smooth. Light.
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Views -->
+            <section id="viewContainer" class="container" style="padding: 28px 0 36px">
+                <!-- HOME -->
+                <div id="home" class="view active fadeUp">
+                    <div class="hero">
+                        <div class="row-between">
+                            <div>
+                                <div class="hero-title">Welcome back! What do you need to do?</div>
+                                <div class="muted" style="font-size:13px">Search any tool or jump into a category.</div>
+                            </div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">auto_awesome</span> Swiss‑knife for desktops</span>
+                        </div>
+                        <div class="search">
+                            <span class="material-symbols-outlined" style="opacity:.7;align-self:center">search</span>
+                            <input id="globalSearch" class="input"
+                                placeholder="Search tools like: currency, qr, physics, todo…" />
+                            <button id="clearSearch" class="btn btn-ghost" aria-label="Clear search"><span
+                                    class="material-symbols-outlined">close</span></button>
+                        </div>
+                        <div class="tags">
+                            <button class="tag" data-jump="currency"><span class="material-symbols-outlined"
+                                    style="font-size:16px">payments</span> Currency</button>
+                            <button class="tag" data-jump="planets"><span class="material-symbols-outlined"
+                                    style="font-size:16px">public</span> Planets</button>
+                            <button class="tag" data-jump="physics"><span class="material-symbols-outlined"
+                                    style="font-size:16px">calculate</span> Physics</button>
+                            <button class="tag" data-jump="qr"><span class="material-symbols-outlined"
+                                    style="font-size:16px">qr_code_2</span> QR</button>
+                            <button class="tag" data-jump="texttools"><span class="material-symbols-outlined"
+                                    style="font-size:16px">text_fields</span> Text</button>
+                        </div>
+                    </div>
+
+                    <div class="section grid grid-4">
+                        <!-- Math & Numbers -->
+                        <div class="card">
+                            <div class="row-between mb-2">
+                                <div class="h3">Math & Numbers</div>
+                                <span class="material-symbols-outlined" style="color:#8B5CF6">functions</span>
+                            </div>
+                            <div class="row" style="flex-direction: column; align-items: stretch; gap: 10px">
+                                <button class="btn tool-link" data-tool="calculator">Calculator</button>
+                                <button class="btn tool-link" data-tool="currency">Currency Converter</button>
+                                <button class="btn tool-link" data-tool="aspect">Aspect Ratio</button>
+                                <button class="btn tool-link" data-tool="unit">Unit Converter</button>
+                                <button class="btn tool-link" data-tool="datecalc">Date Calculator</button>
+                            </div>
+                        </div>
+                        <!-- Science -->
+                        <div class="card">
+                            <div class="row-between mb-2">
+                                <div class="h3">Science & Knowledge</div>
+                                <span class="material-symbols-outlined" style="color:#4A90E2">science</span>
+                            </div>
+                            <div class="row" style="flex-direction: column; align-items: stretch; gap: 10px">
+                                <button class="btn tool-link" data-tool="ptable">Periodic Table</button>
+                                <button class="btn tool-link" data-tool="planets">Planet Viewer</button>
+                                <button class="btn tool-link" data-tool="physics">Physics Formulas</button>
+                            </div>
+                        </div>
+                        <!-- Time -->
+                        <div class="card">
+                            <div class="row-between mb-2">
+                                <div class="h3">Time & Environment</div>
+                            </div>
+                            <div class="row" style="flex-direction: column; align-items: stretch; gap: 10px">
+                                <button class="btn tool-link" data-tool="clock">Clock</button>
+                                <button class="btn tool-link" data-tool="worldclock">World Clock</button>
+                                <button class="btn tool-link" data-tool="countdown">Countdown / Stopwatch</button>
+                                <button class="btn tool-link" data-tool="weather">Weather (Demo)</button>
+                                <button class="btn tool-link" data-tool="moon">Moon Phases</button>
+                            </div>
+                        </div>
+                        <!-- Everyday -->
+                        <div class="card">
+                            <div class="row-between mb-2">
+                                <div class="h3">Everyday Tools</div>
+                                <span class="material-symbols-outlined" style="color: var(--brand)">build</span>
+                            </div>
+                            <div class="row" style="flex-direction: column; align-items: stretch; gap: 10px">
+                                <button class="btn tool-link" data-tool="todo">To‑Do List</button>
+                                <button class="btn tool-link" data-tool="password">Password Generator</button>
+                                <button class="btn tool-link" data-tool="qr">QR Code Maker</button>
+                                <button class="btn tool-link" data-tool="texttools">Text Tools</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATH -->
+                <div id="math" class="view">
+                    <div class="row-between mb-3">
+                        <div class="title">Math & Numbers</div>
+                        <div class="muted">Light mode • Emerald accents</div>
+                    </div>
+
+                    <!-- Calculator -->
+                    <div id="calculator" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Calculator</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">chat</span> chat‑style</span>
+                        </div>
+                        <div>
+                            <div class="bubble-in mb-2">
+                                <label>Enter expression</label>
+                                <form id="calcForm" class="row gap-3" autocomplete="off">
+                                    <input id="calcInput" class="input mono" placeholder="e.g., (2+3)*4 / 5" />
+                                    <button class="btn btn-primary" type="submit">Compute</button>
+                                </form>
+                            </div>
+                            <div id="calcResult" class="bubble-out mono" style="display:none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Currency Converter -->
+                    <div id="currency" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Currency Converter</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">payments</span> live rates</span>
+                        </div>
+                        <form id="currencyForm" class="row gap-3" style="flex-wrap: wrap">
+                            <div style="flex:1 1 200px">
+                                <label>Amount</label>
+                                <input id="curAmount" type="number" class="input searchBox" placeholder="100"
+                                    value="100">
+                            </div>
+                            <div style="flex:1 1 200px">
+                                <label>From</label>
+                                <select id="curFrom" class="select from"></select>
+                            </div>
+                            <div style="flex:1 1 200px">
+                                <label>To</label>
+                                <select id="curTo" class="select to"></select>
+                            </div>
+                            <button id="convertBtn" class="btn btn-primary convert" type="submit"
+                                style="flex:0 0 auto">Convert</button>
+                        </form>
+                        <div id="curResult" class="bubble-out mono mt-2 finalValue" style="display:none"></div>
+                        <div id="finalAmount" style="display:none"></div>
+                    </div>
+
+                    <!-- Aspect Ratio -->
+                    <div id="aspect" class="card">
+                        <div class="h3 mb-2">Aspect Ratio Calculator</div>
+                        <form id="aspectForm" class="row gap-3" style="flex-wrap: wrap">
+                            <div style="flex:1 1 160px"><label>Width</label><input id="arWidth" type="number"
+                                    class="input" value="1920"></div>
+                            <div style="flex:1 1 160px"><label>Height</label><input id="arHeight" type="number"
+                                    class="input" value="1080"></div>
+                            <div style="flex:1 1 160px">
+                                <label>Lock</label>
+                                <select id="arLock" class="select">
+                                    <option value="width">Lock Width</option>
+                                    <option value="height">Lock Height</option>
+                                </select>
+                            </div>
+                            <div style="flex:1 1 160px"><label>Target</label><input id="arTarget" type="number"
+                                    class="input" placeholder="New value"></div>
+                            <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Calculate</button>
+                        </form>
+                        <div id="arResult" class="muted mt-2"></div>
+                    </div>
+
+                    <!-- Unit Converter -->
+                    <div id="unit" class="card">
+                        <div class="h3 mb-2">Unit Converter</div>
+                        <form id="unitForm" class="row gap-3" style="flex-wrap: wrap">
+                            <div style="flex:1 1 160px">
+                                <label>Category</label>
+                                <select id="unitCat" class="select">
+                                    <option value="length">Length</option>
+                                    <option value="weight">Weight</option>
+                                    <option value="temp">Temperature</option>
+                                </select>
+                            </div>
+                            <div style="flex:1 1 160px"><label>From</label><select id="unitFrom"
+                                    class="select"></select></div>
+                            <div style="flex:1 1 160px"><label>To</label><select id="unitTo" class="select"></select>
+                            </div>
+                            <div style="flex:1 1 160px"><label>Value</label><input id="unitVal" type="number"
+                                    class="input" value="1"></div>
+                            <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Convert</button>
+                        </form>
+                        <div id="tempFormulas" class="soft mt-2" style="display:none">
+                            <div class="muted" style="font-size:12px">
+                                <div>°C to °F: (°C × 9/5) + 32</div>
+                                <div>°F to °C: (°F - 32) × 5/9</div>
+                                <div>°C to K: °C + 273.15</div>
+                            </div>
+                        </div>
+                        <div id="unitResult" class="bubble-out mono mt-2" style="display:none"></div>
+                    </div>
+
+                    <!-- Date Calculator -->
+                    <div id="datecalc" class="card">
+                        <div class="h3 mb-2">Date Calculator</div>
+                        <form id="dateForm" class="row gap-3" style="flex-wrap: wrap">
+                            <div style="flex:1 1 180px"><label>From</label><input id="dateFrom" type="date"
+                                    class="input"></div>
+                            <div style="flex:1 1 180px"><label>To</label><input id="dateTo" type="date" class="input">
+                            </div>
+                            <div style="flex:1 1 220px">
+                                <label>Direction</label>
+                                <select id="dateDir" class="select">
+                                    <option value="diff">Difference</option>
+                                    <option value="add">Add days to 'From'</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Calculate</button>
+                        </form>
+                        <div id="dateExtra" class="mt-2" style="display:none">
+                            <label>Days to add</label>
+                            <input id="dateDays" type="number" class="input" placeholder="e.g., 30">
+                        </div>
+                        <div id="dateResult" class="muted mt-2"></div>
+                    </div>
+                </div>
+
+                <!-- SCIENCE -->
+                <div id="science" class="view">
+                    <div class="row-between mb-3">
+                        <div class="title">Science & Knowledge</div>
+                        <div class="muted">Complete sets • Emerald accents</div>
+                    </div>
+
+                    <!-- Periodic Table (complete, card grid) -->
+                    <div id="ptable" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Periodic Table</div>
+                            <div class="row gap-3">
+                                <select id="ptFilter" class="select" style="max-width:160px">
+                                    <option value="all">All Elements</option>
+                                    <option value="1-20">Elements 1-20</option>
+                                    <option value="21-40">Elements 21-40</option>
+                                    <option value="41-60">Elements 41-60</option>
+                                    <option value="61-80">Elements 61-80</option>
+                                    <option value="81-100">Elements 81-100</option>
+                                    <option value="101-118">Elements 101-118</option>
+                                </select>
+                                <input id="ptSearch" class="input"
+                                    placeholder="Search element or symbol (e.g., Fe, Iron)" style="max-width:260px"
+                                    aria-label="Search element">
+                                <span class="pill"><span class="material-symbols-outlined"
+                                        style="font-size:16px">visibility</span> hover for details</span>
+                            </div>
+                        </div>
+                        <div id="ptableGrid" class="grid grid-3"></div>
+                        <div id="ptableHint" class="muted mt-2" style="font-size:12px">Compact card view shows all 118
+                            elements. Use search to filter.</div>
+                    </div>
+
+                    <!-- Planet Viewer (all 8 planets) -->
+                    <div id="planets" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Planet Viewer</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">animation</span> animated orbits</span>
+                        </div>
+                        <div class="grid grid-2">
+                            <div class="soft">
+                                <svg id="planetCanvas" viewBox="0 0 640 380" style="width:100%; height:320px"
+                                    aria-label="Planet viewer">
+                                    <rect x="0" y="0" width="640" height="380" fill="var(--panel-soft)" />
+                                    <circle cx="320" cy="190" r="18" fill="#FFD166" />
+                                    <g id="orbits" stroke="#10A37F" stroke-opacity="0.45" fill="none">
+                                        <circle cx="320" cy="190" r="30" />
+                                        <circle cx="320" cy="190" r="50" />
+                                        <circle cx="320" cy="190" r="70" />
+                                        <circle cx="320" cy="190" r="95" />
+                                        <circle cx="320" cy="190" r="125" />
+                                        <circle cx="320" cy="190" r="160" />
+                                        <circle cx="320" cy="190" r="195" />
+                                        <circle cx="320" cy="190" r="230" />
+                                    </g>
+                                    <g id="planetsGroup" fill="#10A37F"></g>
+                                </svg>
+                            </div>
+                            <div class="soft">
+                                <div class="mb-2">
+                                    <label>Speed</label>
+                                    <input id="planetSpeed" type="range" min="0" max="100" value="50" class="w-100">
+                                </div>
+                                <div class="mb-2">
+                                    <label>Focus</label>
+                                    <select id="planetFocus" class="select">
+                                        <option value="all">All</option>
+                                        <option value="mercury">Mercury</option>
+                                        <option value="venus">Venus</option>
+                                        <option value="earth">Earth</option>
+                                        <option value="mars">Mars</option>
+                                        <option value="jupiter">Jupiter</option>
+                                        <option value="saturn">Saturn</option>
+                                        <option value="uranus">Uranus</option>
+                                        <option value="neptune">Neptune</option>
+                                    </select>
+                                </div>
+                                <div class="muted">Emerald outlines show orbits. Adjust speed to see smooth motion
+                                    across all eight planets.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Physics Formulas (expanded) -->
+                    <div id="physics" class="card">
+                        <div class="grid grid-2">
+                            <!-- Velocity -->
+                            <div class="soft">
+                                <div class="h3">Velocity</div>
+                                <div class="mono muted mt-1">v = s / t</div>
+                                <form id="velForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>s (m)</label><input id="velS" type="number"
+                                            class="input" value="100"></div>
+                                    <div style="flex:1 1 120px"><label>t (s)</label><input id="velT" type="number"
+                                            class="input" value="9.58"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="velOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                            <!-- Force -->
+                            <div class="soft">
+                                <div class="h3">Force</div>
+                                <div class="mono muted mt-1">F = m · a</div>
+                                <form id="forceForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>m (kg)</label><input id="forceM" type="number"
+                                            class="input" value="10"></div>
+                                    <div style="flex:1 1 120px"><label>a (m/s²)</label><input id="forceA" type="number"
+                                            class="input" value="2"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="forceOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                            <!-- Kinetic Energy -->
+                            <div class="soft">
+                                <div class="h3">Kinetic Energy</div>
+                                <div class="mono muted mt-1">KE = 1/2 · m · v²</div>
+                                <form id="keForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>m (kg)</label><input id="keM" type="number"
+                                            class="input" value="60"></div>
+                                    <div style="flex:1 1 120px"><label>v (m/s)</label><input id="keV" type="number"
+                                            class="input" value="10"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="keOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                            <!-- Potential Energy -->
+                            <div class="soft">
+                                <div class="h3">Potential Energy</div>
+                                <div class="mono muted mt-1">PE = m · g · h</div>
+                                <form id="peForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>m (kg)</label><input id="peM" type="number"
+                                            class="input" value="50"></div>
+                                    <div style="flex:1 1 120px"><label>h (m)</label><input id="peH" type="number"
+                                            class="input" value="5"></div>
+                                    <div style="flex:1 1 120px"><label>g (m/s²)</label><input id="peG" type="number"
+                                            class="input" value="9.81"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="peOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                            <!-- Momentum -->
+                            <div class="soft">
+                                <div class="h3">Momentum</div>
+                                <div class="mono muted mt-1">p = m · v</div>
+                                <form id="pForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>m (kg)</label><input id="pM" type="number"
+                                            class="input" value="70"></div>
+                                    <div style="flex:1 1 120px"><label>v (m/s)</label><input id="pV" type="number"
+                                            class="input" value="3"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="pOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                            <!-- Ohm's Law -->
+                            <div class="soft">
+                                <div class="h3">Ohm's Law</div>
+                                <div class="mono muted mt-1">V = I · R</div>
+                                <form id="ohmForm" class="row gap-3 mt-2" style="flex-wrap: wrap">
+                                    <div style="flex:1 1 120px"><label>I (A)</label><input id="ohmI" type="number"
+                                            class="input" value="2"></div>
+                                    <div style="flex:1 1 120px"><label>R (Ω)</label><input id="ohmR" type="number"
+                                            class="input" value="10"></div>
+                                    <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Compute</button>
+                                </form>
+                                <div id="ohmOut" class="mt-2" style="display:none; color: var(--brand)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TIME -->
+                <div id="time" class="view">
+                    <div class="row-between mb-3">
+                        <div class="title">Time & Environment</div>
+                        <div class="muted">Glowing accents • Smooth updates</div>
+                    </div>
+
+                    <div id="clock" class="card">
+                        <div class="h3 mb-2">Clock</div>
+                        <div id="localClock" class="neon" style="font-size: 34px; font-weight: 600">--:--:--</div>
+                        <div id="localDate" class="muted mt-1">—</div>
+                    </div>
+
+                    <div id="worldclock" class="card">
+                        <div class="h3 mb-2">World Clock</div>
+                        <div class="grid grid-3">
+                            <div class="soft">
+                                <div class="muted" style="font-size:13px">New York</div>
+                                <div id="nyTime" class="neon" style="font-size: 22px; font-weight: 600">--:--</div>
+                            </div>
+                            <div class="soft">
+                                <div class="muted" style="font-size:13px">London</div>
+                                <div id="ldnTime" class="neon" style="font-size: 22px; font-weight: 600">--:--</div>
+                            </div>
+                            <div class="soft">
+                                <div class="muted" style="font-size:13px">Tokyo</div>
+                                <div id="tkyTime" class="neon" style="font-size: 22px; font-weight: 600">--:--</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="countdown" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Countdown / Stopwatch</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">hourglass</span> subtle pulse</span>
+                        </div>
+                        <div class="grid grid-2">
+                            <div class="soft">
+                                <div class="h3">Countdown</div>
+                                <form id="cdForm" class="row gap-3 mt-2">
+                                    <div class="w-100">
+                                        <label>Seconds</label>
+                                        <input id="cdSeconds" type="number" class="input" value="30">
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Start</button>
+                                    <button id="cdReset" type="button" class="btn btn-ghost">Reset</button>
+                                </form>
+                                <div id="cdDisplay" class="neon mt-2" style="font-size: 28px; font-weight: 600">00:30
+                                </div>
+                                <div id="cdPulse" class="muted mt-1" style="display:none"><span
+                                        class="pulseSoft">Counting down…</span></div>
+                            </div>
+                            <div class="soft">
+                                <div class="h3">Stopwatch</div>
+                                <div class="row gap-3 mt-2">
+                                    <button id="swStart" class="btn btn-primary" type="button">Start</button>
+                                    <button id="swLap" class="btn btn-ghost" type="button">Lap</button>
+                                    <button id="swReset" class="btn btn-ghost" type="button">Reset</button>
+                                </div>
+                                <div id="swDisplay" class="neon mt-2" style="font-size: 28px; font-weight: 600">00:00.00
+                                </div>
+                                <div id="swLaps" class="muted mt-2"
+                                    style="display:flex; flex-direction:column; gap:6px"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="weather" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Weather</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">cloud</span> live data</span>
+                        </div>
+                        <form id="weatherForm" class="row gap-3">
+                            <div class="w-100">
+                                <label>City</label>
+                                <input id="weatherCity" class="input" value="San Francisco" placeholder="San Francisco">
+                            </div>
+                            <button class="btn btn-primary" type="submit">Show</button>
+                        </form>
+                        <div id="weatherCard" class="soft mt-2 row-between">
+                            <div>
+                                <div style="font-size: 22px; font-weight: 600">18°C • Partly Cloudy</div>
+                                <div class="muted" style="font-size: 13px">Feels like 17°C • 10 km/h • 55% RH</div>
+                            </div>
+                            <div style="font-size: 28px">⛅</div>
+                        </div>
+                        <div class="muted mt-2" style="font-size:12px">Real-time weather data from OpenWeatherMap. Enter
+                            any city worldwide.</div>
+                    </div>
+
+                    <div id="moon" class="card">
+                        <div class="h3 mb-2">Moon Phases</div>
+                        <form id="moonForm" class="row gap-3">
+                            <div><label>Date</label><input id="moonDate" type="date" class="input"></div>
+                            <button class="btn btn-primary" type="submit">Calculate</button>
+                        </form>
+                        <div class="soft mt-2 row-between">
+                            <div class="h3" id="moonName">—</div>
+                            <div id="moonEmoji" style="font-size:28px">🌗</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVERYDAY -->
+                <div id="everyday" class="view">
+                    <div class="row-between mb-3">
+                        <div class="title">Everyday Tools</div>
+                        <div class="muted">Clean cards • Joyful micro‑interactions</div>
+                    </div>
+
+                    <!-- To-Do -->
+                    <div id="todo" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">To‑Do List</div>
+                            <span class="pill"><span class="material-symbols-outlined"
+                                    style="font-size:16px">check_circle</span> green check</span>
+                        </div>
+                        <form id="todoForm" class="row gap-3 mb-2">
+                            <input id="todoInput" class="input" placeholder="Add a task…">
+                            <button class="btn btn-primary" type="submit">Add</button>
+                        </form>
+                        <div id="todoList" style="display:grid; gap:12px"></div>
+                    </div>
+
+                    <!-- Password -->
+                    <div id="password" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">Password Generator</div>
+                            <span class="pill"
+                                style="border:1px solid var(--brand); background:transparent; color:var(--brand)"><span
+                                    class="material-symbols-outlined" style="font-size:16px">lock</span> secure
+                                focus</span>
+                        </div>
+                        <form id="passForm" class="row gap-3" style="flex-wrap: wrap">
+                            <div style="flex:1 1 120px"><label>Length</label><input id="passLen" type="number"
+                                    class="input" value="16" min="4" max="64"></div>
+                            <label class="row gap-2" style="font-size:14px"><input type="checkbox" id="passUpper"
+                                    checked> A‑Z</label>
+                            <label class="row gap-2" style="font-size:14px"><input type="checkbox" id="passLower"
+                                    checked> a‑z</label>
+                            <label class="row gap-2" style="font-size:14px"><input type="checkbox" id="passNum" checked>
+                                0‑9</label>
+                            <label class="row gap-2" style="font-size:14px"><input type="checkbox" id="passSym" checked>
+                                Symbols</label>
+                            <button class="btn btn-primary" type="submit" style="flex:0 0 auto">Generate</button>
+                        </form>
+                        <div class="row gap-3 mt-2">
+                            <input id="passOut" class="input mono" readonly
+                                placeholder="Your password will appear here">
+                            <button id="passCopy" class="btn btn-ghost" type="button">Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- QR Maker -->
+                    <div id="qr" class="card">
+                        <div class="row-between mb-2">
+                            <div class="h3">QR Code Maker</div>
+                            <span class="pill"
+                                style="border:1px solid var(--brand); background:transparent; color:var(--brand)"><span
+                                    class="material-symbols-outlined" style="font-size:16px">qr_code_2</span> SVG
+                                pattern</span>
+                        </div>
+                        <form id="qrForm" class="row gap-3">
+                            <input id="qrText" class="input" placeholder="Type text or a URL"
+                                value="https://thekzbn.name.ng">
+                            <button class="btn btn-primary" type="submit">Generate</button>
+                        </form>
+                        <div class="soft mt-2 center"
+                            style="border: 2px solid color-mix(in oklab, var(--brand) 50%, transparent)">
+                            <svg id="qrSvg" width="160" height="160" viewBox="0 0 160 160" style="background: white">
+                                <rect width="160" height="160" fill="white" />
+                                <g id="qrPattern"></g>
+                            </svg>
+                        </div>
+                        <div class="muted mt-2" style="font-size:12px">Creates unique SVG patterns based on your text
+                            input.</div>
+                    </div>
+
+                    <!-- Text Tools -->
+                    <div id="texttools" class="card">
+                        <div class="h3 mb-2">Text Tools</div>
+                        <div class="grid grid-2">
+                            <div class="soft">
+                                <div class="bubble-in">
+                                    <label>Input</label>
+                                    <textarea id="txtInput" class="textarea"
+                                        placeholder="Paste your text..."></textarea>
+                                </div>
+                                <div class="row gap-3 mt-2" style="flex-wrap:wrap">
+                                    <button class="btn" data-txt="upper" type="button">UPPERCASE</button>
+                                    <button class="btn" data-txt="lower" type="button">lowercase</button>
+                                    <button class="btn" data-txt="title" type="button">Title Case</button>
+                                    <button class="btn" data-txt="reverse" type="button">Reverse</button>
+                                    <button class="btn btn-primary" data-txt="copy" type="button">Copy Output</button>
+                                </div>
+                            </div>
+                            <div class="soft">
+                                <div class="bubble-out">
+                                    <div class="muted" style="font-size: 13px; margin-bottom:6px">Output</div>
+                                    <pre id="txtOutput" class="mono" style="white-space: pre-wrap; margin:0"></pre>
+                                </div>
+                                <div id="txtMeta" class="muted mt-2" style="font-size: 12px">Words: 0 • Characters: 0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Toast -->
+            <div class="toast-wrap">
+                <div id="toolToast" class="toast">
+                    <div class="row" style="gap:10px">
+                        <div class="center"
+                            style="width:34px;height:34px;border-radius:10px;background:var(--brand-soft);color:var(--brand)">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                        </div>
+                        <div style="font-size:14px"><span style="font-weight:600" id="toolToastText">Opened:</span>
+                            <span id="toolToastName">—</span></div>
+                        <button id="toastClose" class="btn" style="margin-left:auto" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
